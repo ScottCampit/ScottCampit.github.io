@@ -3,7 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scott Campit</title>
+<title>Scott Campit — AI/ML Engineer & Founder of Torchstack</title>
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Scott Campit — AI/ML Engineer & Founder of Torchstack">
+<meta name="description" content="Portfolio of Scott Campit — biomedical researcher, data scientist, and technology leader. Founder of Torchstack, an AI product studio building solutions in predictive analytics, NLP, computer vision, and multi-modal AI for startups and SMBs.">
+<meta name="keywords" content="Scott Campit, AI engineer, machine learning, data scientist, Torchstack, AI product studio, predictive analytics, NLP, computer vision, agentic AI, bioinformatics, portfolio">
+<meta name="author" content="Scott Campit">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scottcampit.github.io/">
+<meta property="og:title" content="Scott Campit — AI/ML Engineer & Founder of Torchstack">
+<meta property="og:description" content="Biomedical researcher, data scientist, and technology leader building high-impact AI products. Explore case studies in real estate analytics, custom LLMs, computer vision, voicebots, sports AI, bioinformatics, and logistics optimization.">
+<meta property="og:image" content="https://scottcampit.github.io/images/profile.png">
+<meta property="og:site_name" content="Scott Campit Portfolio">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://scottcampit.github.io/">
+<meta name="twitter:title" content="Scott Campit — AI/ML Engineer & Founder of Torchstack">
+<meta name="twitter:description" content="Biomedical researcher, data scientist, and technology leader building high-impact AI products. Explore case studies in predictive analytics, NLP, computer vision, and more.">
+<meta name="twitter:image" content="https://scottcampit.github.io/images/profile.png">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://scottcampit.github.io/">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#D6DAE2">
+
+<!-- Additional SEO -->
+<meta name="subject" content="AI/ML Engineering Portfolio">
+<meta name="language" content="en">
+<meta name="rating" content="general">
+<meta name="coverage" content="worldwide">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Scott Campit",
+  "url": "https://scottcampit.github.io",
+  "image": "https://scottcampit.github.io/images/profile.png",
+  "jobTitle": "AI/ML Engineer & Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Torchstack",
+    "url": "https://torchstack.ai"
+  },
+  "description": "Biomedical researcher, data scientist, and technology leader building high-impact AI products across predictive analytics, NLP, computer vision, and multi-modal AI.",
+  "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Data Science", "Computer Vision", "Natural Language Processing", "Bioinformatics", "Predictive Analytics"],
+  "sameAs": [
+    "https://github.com/ScottCampit",
+    "https://www.linkedin.com/in/scottcampit/"
+  ],
+  "email": "scott@torchstack.ai",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Bay Area",
+    "addressCountry": "US"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Sora:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
@@ -909,6 +974,34 @@ function renderModal() {
     </div>';
 }
 
+// ============ SEO HELPERS ============
+function updatePageMeta() {
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var ogTitle = document.querySelector('meta[property="og:title"]');
+  var ogDesc = document.querySelector('meta[property="og:description"]');
+  var ogUrl = document.querySelector('meta[property="og:url"]');
+  if (state.modal) {
+    var p = state.modal;
+    document.title = p.title + ' — Scott Campit | ' + p.category;
+    if (metaDesc) metaDesc.content = p.summary;
+    if (ogTitle) ogTitle.content = p.title + ' — Scott Campit';
+    if (ogDesc) ogDesc.content = p.summary;
+    if (ogUrl) ogUrl.content = 'https://scottcampit.github.io/#case-studies';
+  } else if (state.page === 'case-studies') {
+    document.title = 'Case Studies — Scott Campit | AI/ML Portfolio';
+    if (metaDesc) metaDesc.content = 'AI and machine learning case studies by Scott Campit — real estate analytics, custom LLMs, computer vision, social engineering voicebots, sports AI, bioinformatics, and logistics optimization.';
+    if (ogTitle) ogTitle.content = 'Case Studies — Scott Campit | AI/ML Portfolio';
+    if (ogDesc) ogDesc.content = 'Explore AI/ML case studies spanning predictive analytics, NLP, computer vision, agentic AI, and more.';
+    if (ogUrl) ogUrl.content = 'https://scottcampit.github.io/#case-studies';
+  } else {
+    document.title = 'Scott Campit — AI/ML Engineer & Founder of Torchstack';
+    if (metaDesc) metaDesc.content = 'Portfolio of Scott Campit — biomedical researcher, data scientist, and technology leader. Founder of Torchstack, an AI product studio building solutions in predictive analytics, NLP, computer vision, and multi-modal AI.';
+    if (ogTitle) ogTitle.content = 'Scott Campit — AI/ML Engineer & Founder of Torchstack';
+    if (ogDesc) ogDesc.content = 'Biomedical researcher, data scientist, and technology leader building high-impact AI products.';
+    if (ogUrl) ogUrl.content = 'https://scottcampit.github.io/';
+  }
+}
+
 // ============ NAVIGATION ============
 function navigate(page) {
   state.page = page;
@@ -917,6 +1010,7 @@ function navigate(page) {
   window.scrollTo({ top: 0, behavior: "smooth" });
   window.location.hash = page === "home" ? "" : page;
   render();
+  updatePageMeta();
 }
 
 function openModal(id) {
@@ -924,14 +1018,14 @@ function openModal(id) {
   state.galleryIdx = 0;
   document.body.style.overflow = "hidden";
   render();
-
+  updatePageMeta();
 }
 
 function closeModal() {
-
   state.modal = null;
   document.body.style.overflow = "";
   render();
+  updatePageMeta();
 }
 
 
