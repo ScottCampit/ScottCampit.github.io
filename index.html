@@ -245,6 +245,16 @@
     background: linear-gradient(135deg, #6B8CAE 0%, #435272 50%, #8A9BB5 100%);
     border-radius: 12px;
     margin: 10px 10px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .cs-card-body {
@@ -450,15 +460,21 @@
     padding: 16px;
     border: 1px solid #E2E8EF;
     margin-bottom: 32px;
+    position: relative;
   }
-  .modal-gallery-img {
+  .modal-gallery-viewport {
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
     background: #fff;
+    min-height: 180px;
+  }
+  .modal-gallery-img {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 180px;
+    animation: galleryFadeIn 0.35s ease;
   }
   .modal-gallery-img img {
     max-width: 100%;
@@ -466,6 +482,34 @@
     object-fit: contain;
     display: block;
   }
+  @keyframes galleryFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .modal-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(67, 82, 114, 0.7);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+  .modal-gallery-arrow:hover {
+    background: rgba(67, 82, 114, 0.9);
+  }
+  .modal-gallery-arrow.left { left: 10px; }
+  .modal-gallery-arrow.right { right: 10px; }
   .modal-gallery-label {
     font-size: 13px;
     color: var(--text-light);
@@ -473,11 +517,17 @@
     margin-top: 10px;
     font-style: italic;
   }
+  .modal-gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
   .modal-gallery-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 12px;
   }
   .modal-gallery-dot {
     width: 10px;
@@ -490,6 +540,12 @@
     transition: opacity 0.2s;
   }
   .modal-gallery-dot.active { opacity: 1; }
+  .modal-gallery-counter {
+    font-size: 12px;
+    color: var(--text-light);
+    font-family: var(--mono-font);
+    white-space: nowrap;
+  }
 
   @keyframes fadeInBackdrop {
     from { opacity: 0; }
@@ -545,6 +601,7 @@ const PROJECTS = [
       "Four production pipelines: data ingestion, feature preparation, model training, and performance evaluation"
     ],
     techTags: ["Time-Series Forecasting","Bias Detection","IAAO Compliance","MLOps","Python"],
+    thumbnail: "images/real-estate-data-science/dashboard_combined.png",
     images: [
       { src: "images/real-estate-data-science/dashboard_combined.png", label: "Property Valuation Dashboard" },
       { src: "images/real-estate-data-science/correlation_heatmap.png", label: "Feature Correlation Heatmap" },
@@ -570,6 +627,7 @@ const PROJECTS = [
       "Classical NLP models where a large AI model is overkill \u2014 the right tool, not the most expensive one"
     ],
     techTags: ["LLM Fine-Tuning","LoRA","Prompt Engineering","NLP","Evaluation Design"],
+    thumbnail: "images/custom-llms/llm-2.png",
     images: [
       { src: "images/custom-llms/llm-1.png", label: "Language Model Architecture" },
       { src: "images/custom-llms/llm-2.png", label: "Fine-Tuning Results" },
@@ -593,6 +651,7 @@ const PROJECTS = [
       "Live safety monitoring application analyzing camera feeds and flagging hazards in real time"
     ],
     techTags: ["Object Detection","Real-Time Inference","Data Annotation","Edge Deployment","Safety AI"],
+    thumbnail: "images/warehouse-computer-vision/frame_000001.jpg",
     images: [
       { src: "images/warehouse-computer-vision/confusion_matrix_normalized.png", label: "Model Confusion Matrix" },
       { src: "images/warehouse-computer-vision/performance_report.png", label: "Performance Report" },
@@ -616,6 +675,7 @@ const PROJECTS = [
       "Custom caller identities and scenarios tailored per client \u2014 from IT impersonation to vendor fraud"
     ],
     techTags: ["Voice AI","Agentic Systems","Security Testing","Real-Time Avatars","Behavioral Scoring"],
+    thumbnail: "images/voicebots/voicebot-thumbnail.svg",
     images: []
   },
   {
@@ -634,6 +694,7 @@ const PROJECTS = [
       "Cross-platform mobile and web application for instant AI-powered feedback"
     ],
     techTags: ["Pose Estimation","Biomechanics","Mobile AI","Cross-Platform","Sports Analytics"],
+    thumbnail: "images/sports-multi-modal/IMG_2415.jpg",
     images: [
       { src: "images/sports-multi-modal/IMG_2413.jpg", label: "Athlete Movement Analysis" },
       { src: "images/sports-multi-modal/IMG_2414.jpg", label: "Pose Detection" },
@@ -658,6 +719,7 @@ const PROJECTS = [
       "Interactive visualizations making complex biological findings interpretable for scientists and stakeholders"
     ],
     techTags: ["Genomics","Multi-Omics","Biomarker Discovery","Data Visualization","ML Pipelines"],
+    thumbnail: "images/multi-modal-bioinformatics/sankey.png",
     images: [
       { src: "images/multi-modal-bioinformatics/pca.png", label: "PCA Analysis" },
       { src: "images/multi-modal-bioinformatics/clustermap.png", label: "Cluster Map" },
@@ -681,6 +743,7 @@ const PROJECTS = [
       "Statistical analysis of shipping patterns across geographies and carriers"
     ],
     techTags: ["Route Optimization","Time-Series","Network Analysis","Dashboards","Operations Research"],
+    thumbnail: "images/logistics/freight_analytics_dashboard.png",
     images: [
       { src: "images/logistics/freight_analytics_dashboard.png", label: "Freight Analytics Dashboard" },
       { src: "images/logistics/tsp_network_analysis.png", label: "Network Analysis" },
@@ -758,7 +821,7 @@ function renderCaseStudies() {
   var cards = PROJECTS.map(function(p) {
     return '\
     <div class="cs-card" onclick="openModal(\'' + p.id + '\')">\
-      <div class="cs-card-image"></div>\
+      <div class="cs-card-image"' + (p.thumbnail ? ' style="background:none;"' : '') + '>' + (p.thumbnail ? '<img src="' + p.thumbnail + '" alt="' + p.title + '">' : '') + '</div>\
       <div class="cs-card-body">\
         <span class="cs-card-category">' + p.category + '</span>\
         <h3>' + p.title + '</h3>\
@@ -796,11 +859,19 @@ function renderModal() {
     var dots = p.images.map(function(_, i) {
       return '<button class="modal-gallery-dot ' + (i === state.galleryIdx ? 'active' : '') + '" onclick="event.stopPropagation();setGallery(' + i + ')"></button>';
     }).join("");
+    var showArrows = p.images.length > 1;
     galleryHtml = '\
       <div class="modal-gallery">\
-        <div class="modal-gallery-img"><img src="' + img.src + '" alt="' + img.label + '"></div>\
+        <div class="modal-gallery-viewport">\
+          <div class="modal-gallery-img"><img src="' + img.src + '" alt="' + img.label + '"></div>\
+          ' + (showArrows ? '<button class="modal-gallery-arrow left" onclick="event.stopPropagation();galleryPrev()" title="Previous">\u2039</button>' : '') + '\
+          ' + (showArrows ? '<button class="modal-gallery-arrow right" onclick="event.stopPropagation();galleryNext()" title="Next">\u203A</button>' : '') + '\
+        </div>\
         <div class="modal-gallery-label">' + img.label + '</div>\
-        <div class="modal-gallery-dots">' + dots + '</div>\
+        <div class="modal-gallery-controls">\
+          <span class="modal-gallery-counter">' + (state.galleryIdx + 1) + ' / ' + p.images.length + '</span>\
+          <div class="modal-gallery-dots">' + dots + '</div>\
+        </div>\
       </div>';
   }
 
@@ -853,22 +924,59 @@ function openModal(id) {
   state.galleryIdx = 0;
   document.body.style.overflow = "hidden";
   render();
+
 }
 
 function closeModal() {
+
   state.modal = null;
   document.body.style.overflow = "";
   render();
 }
 
-function setGallery(idx) {
-  state.galleryIdx = idx;
-  render();
+
+function updateGalleryInPlace() {
+  if (!state.modal || !state.modal.images || state.modal.images.length === 0) return;
+  var img = state.modal.images[state.galleryIdx];
+  var imgEl = document.querySelector('.modal-gallery-img');
+  if (imgEl) {
+    imgEl.innerHTML = '<img src="' + img.src + '" alt="' + img.label + '">';
+  }
+  var labelEl = document.querySelector('.modal-gallery-label');
+  if (labelEl) labelEl.textContent = img.label;
+  var counterEl = document.querySelector('.modal-gallery-counter');
+  if (counterEl) counterEl.textContent = (state.galleryIdx + 1) + ' / ' + state.modal.images.length;
+  var dots = document.querySelectorAll('.modal-gallery-dot');
+  dots.forEach(function(dot, i) {
+    dot.classList.toggle('active', i === state.galleryIdx);
+  });
 }
 
-// Escape key to close modal
+function setGallery(idx) {
+  state.galleryIdx = idx;
+  updateGalleryInPlace();
+
+}
+
+function galleryNext() {
+  if (!state.modal || !state.modal.images || state.modal.images.length === 0) return;
+  state.galleryIdx = (state.galleryIdx + 1) % state.modal.images.length;
+  updateGalleryInPlace();
+}
+
+function galleryPrev() {
+  if (!state.modal || !state.modal.images || state.modal.images.length === 0) return;
+  state.galleryIdx = (state.galleryIdx - 1 + state.modal.images.length) % state.modal.images.length;
+  updateGalleryInPlace();
+
+}
+
+// Keyboard controls for modal
 document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape" && state.modal) closeModal();
+  if (!state.modal) return;
+  if (e.key === "Escape") closeModal();
+  if (e.key === "ArrowRight") { galleryNext(); startGalleryTimer(); }
+  if (e.key === "ArrowLeft") { galleryPrev(); startGalleryTimer(); }
 });
 
 // Handle browser back/forward
