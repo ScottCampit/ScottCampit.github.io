@@ -136,6 +136,7 @@ nav[aria-label="Primary"] a[aria-current="page"]:hover { text-decoration: none; 
   margin-bottom: 36px;
 }
 .bio a { color: var(--link); }
+.bio p + p { margin-top: 14px; }
 
 /* Call to action */
 .cta { margin-bottom: 28px; }
