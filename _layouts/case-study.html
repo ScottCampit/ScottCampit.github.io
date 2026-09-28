@@ -24,12 +24,12 @@ layout: default
       </section>
       <div class="cs-divider"></div>
       <section class="cs-section">
-        <h2 class="cs-section-label">Our Approach</h2>
+        <h2 class="cs-section-label">Approach</h2>
         <p>{{ page.approach | escape }}</p>
       </section>
       <div class="cs-divider"></div>
       <section class="cs-section">
-        <h2 class="cs-section-label">What We Delivered</h2>
+        <h2 class="cs-section-label">What We Built</h2>
         <ol class="deliverables">
           {% for d in page.deliverables %}<li><span class="deliverable-num" aria-hidden="true">{{ forloop.index }}</span><p>{{ d | escape }}</p></li>
           {% endfor %}
@@ -57,7 +57,7 @@ layout: default
     </div>
   </article>
 
-  {% include cta.html boxed=true heading="Working on something similar?" text="I help startups and SMBs take AI projects from idea to production. Tell me what you're building." %}
+  {% include cta.html boxed=true heading="Thinking about a similar problem?" text="I&rsquo;d enjoy comparing notes. Tell me what you&rsquo;re working on." %}
 
   <nav class="cs-pager" aria-label="More case studies">
     {% if prev %}<a class="cs-pager-prev" href="{{ prev.url | relative_url }}" rel="prev"><span>Previous</span>{{ prev.title | escape }}</a>{% else %}<span></span>{% endif %}

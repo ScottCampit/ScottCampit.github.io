@@ -11,10 +11,10 @@ twitter:
   <a class="cs-brand" href="{{ '/' | relative_url }}">Scott Campit</a>
   {% include nav.html active="case-studies" %}
   <h1 class="cs-title">Case studies</h1>
-  <p class="cs-intro">A collection of projects spanning AI/ML, product engineering, and research. Select any project to read the details.</p>
+  <p class="cs-intro">Selected projects across AI, biomedical research, and product engineering, from my time as a researcher and as founder of Torchstack.</p>
   <div class="cs-grid">
     {% assign studies = site.case_studies | sort: "order" %}
     {% for cs in studies %}{% include card.html cs=cs heading="h2" loading="eager" %}{% endfor %}
   </div>
-  {% include cta.html boxed=true heading="Have a problem worth solving?" text="I work with startups and SMBs on AI products, from first prototype to production." %}
+  {% include cta.html boxed=true heading="Want to dig into one of these?" text="I&rsquo;m happy to talk through the approach, what worked, and what I&rsquo;d do differently." %}
 </div>

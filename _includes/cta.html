@@ -1,8 +1,8 @@
 <section class="cta{% if include.boxed %} cta-boxed{% endif %}">
-  <h2 class="cta-heading">{{ include.heading | default: "Get in touch" }}</h2>
+  <h2 class="cta-heading">{{ include.heading | default: "Let&rsquo;s talk" }}</h2>
   {% if include.text %}<p class="cta-text">{{ include.text }}</p>{% endif %}
   <div class="cta-actions">
-    <a class="btn-primary" href="{{ include.book_href | default: site.calendly_url }}">Book a discovery call</a>
-    <a class="cta-email" href="mailto:{{ site.email }}">or email {{ site.email }}</a>
+    <a class="btn-primary" href="mailto:{{ site.email }}">{{ include.button | default: "Email me" }}</a>
+    <span class="cta-email">{{ site.email }}</span>
   </div>
 </section>
