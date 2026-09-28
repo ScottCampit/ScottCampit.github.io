@@ -1,0 +1,12 @@
+# macOS / exFAT metadata
+._*
+.DS_Store
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+vendor/
+.bundle/
