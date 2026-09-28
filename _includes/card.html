@@ -1,0 +1,9 @@
+{% assign heading = include.heading | default: "h3" %}
+<a class="cs-card" href="{{ include.cs.url | relative_url }}">
+  <div class="cs-card-image"><img src="{{ include.cs.thumbnail | relative_url }}" alt="" width="800" height="420" loading="lazy"></div>
+  <div class="cs-card-body">
+    <span class="cs-card-category">{{ include.cs.category }}</span>
+    <{{ heading }}>{{ include.cs.title }}</{{ heading }}>
+    <p class="summary">{{ include.cs.summary }}</p>
+  </div>
+</a>

@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{% assign studies = site.case_studies | sort: "order" %}
+{% for s in studies %}{% if s.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% if idx > 0 %}{% assign prev_i = idx | minus: 1 %}{% assign prev = studies[prev_i] %}{% endif %}
+{% assign next_i = idx | plus: 1 %}{% assign next = studies[next_i] %}
+
+<div class="cs-page-wrapper cs-detail">
+  <a class="cs-brand" href="{{ '/' | relative_url }}">Scott Campit</a>
+  {% include nav.html active="case-study" %}
+
+  <article class="cs-article">
+    <header class="cs-hero">
+      <span class="cat-badge">{{ page.category }}</span>
+      <h1>{{ page.title }}</h1>
+      <p class="subtitle">{{ page.subtitle }}</p>
+    </header>
+
+    <div class="cs-article-body">
+      <section class="cs-section">
+        <h2 class="cs-section-label">The Challenge</h2>
+        <p>{{ page.problem }}</p>
+      </section>
+      <div class="cs-divider"></div>
+      <section class="cs-section">
+        <h2 class="cs-section-label">Our Approach</h2>
+        <p>{{ page.approach }}</p>
+      </section>
+      <div class="cs-divider"></div>
+      <section class="cs-section">
+        <h2 class="cs-section-label">What We Delivered</h2>
+        <ol class="deliverables">
+          {% for d in page.deliverables %}<li><span class="deliverable-num" aria-hidden="true">{{ forloop.index }}</span><p>{{ d }}</p></li>
+          {% endfor %}
+        </ol>
+      </section>
+      <div class="cs-divider"></div>
+      <section class="cs-section">
+        <h2 class="cs-section-label">Technologies &amp; Methods</h2>
+        <ul class="tech-tags">
+          {% for t in page.tech_tags %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+      </section>
+      {% if page.images and page.images.size > 0 %}
+      <div class="cs-divider"></div>
+      <section class="cs-section">
+        <h2 class="cs-section-label">Selected Visuals</h2>
+        {% for img in page.images %}
+        <figure class="cs-figure">
+          <img src="{{ img.src | relative_url }}" alt="{{ img.label }}" width="{{ img.w }}" height="{{ img.h }}" loading="lazy" decoding="async">
+          <figcaption>{{ img.label }}</figcaption>
+        </figure>
+        {% endfor %}
+      </section>
+      {% endif %}
+    </div>
+  </article>
+
+  {% include cta.html boxed=true heading="Working on something similar?" text="I help startups and SMBs take AI projects from idea to production. Tell me what you're building." %}
+
+  <nav class="cs-pager" aria-label="More case studies">
+    {% if prev %}<a class="cs-pager-prev" href="{{ prev.url | relative_url }}" rel="prev"><span>Previous</span>{{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a class="cs-pager-next" href="{{ next.url | relative_url }}" rel="next"><span>Next</span>{{ next.title }}</a>{% else %}<a class="cs-pager-next" href="{{ '/case-studies/' | relative_url }}"><span>Back to</span>All case studies</a>{% endif %}
+  </nav>
+</div>

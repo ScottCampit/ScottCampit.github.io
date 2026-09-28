@@ -1,0 +1,18 @@
+---
+title: Case studies
+description: >-
+  AI and machine learning case studies by Scott Campit: real estate analytics, custom LLMs,
+  computer vision, social engineering voicebots, sports AI, bioinformatics, and logistics optimization.
+permalink: /case-studies/
+---
+<div class="cs-page-wrapper">
+  <a class="cs-brand" href="{{ '/' | relative_url }}">Scott Campit</a>
+  {% include nav.html active="case-studies" %}
+  <h1 class="cs-title">Case studies</h1>
+  <p class="cs-intro">A collection of projects spanning AI/ML, product engineering, and research. Select any project to read the details.</p>
+  <div class="cs-grid">
+    {% assign studies = site.case_studies | sort: "order" %}
+    {% for cs in studies %}{% include card.html cs=cs heading="h2" %}{% endfor %}
+  </div>
+  {% include cta.html boxed=true heading="Have a problem worth solving?" text="I work with startups and SMBs on AI products, from first prototype to production." %}
+</div>
