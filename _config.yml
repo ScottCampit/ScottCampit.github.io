@@ -1,0 +1,53 @@
+title: Scott Campit
+tagline: AI/ML Engineer & Founder of Torchstack
+description: >-
+  Portfolio of Scott Campit — biomedical researcher, data scientist, and technology
+  leader. Founder of Torchstack, an AI product studio building solutions in predictive
+  analytics, NLP, computer vision, and multi-modal AI for startups and SMBs.
+url: https://scottcampit.com
+lang: en_US
+email: scott@torchstack.ai
+calendly_url: https://calendly.com/torchstack/discovery
+
+author:
+  name: Scott Campit
+  url: https://scottcampit.com
+social:
+  name: Scott Campit
+  links:
+    - https://github.com/ScottCampit
+    - https://www.linkedin.com/in/scottcampit/
+
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /images/profile.jpg
+  - scope:
+      path: ""
+      type: case_studies
+    values:
+      layout: case-study
+      # First published on the site; without this Jekyll stamps every build time.
+      date: "2026-04-10"
+      seo:
+        type: Article
+
+theme: null
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts/
+  - vendor/
