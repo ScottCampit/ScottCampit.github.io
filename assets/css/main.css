@@ -70,31 +70,6 @@ main { flex: 1; width: 100%; }
   max-width: 560px;
 }
 
-/* Nav */
-nav[aria-label="Primary"] {
-  margin-bottom: 32px;
-}
-nav[aria-label="Primary"] a {
-  font-family: var(--body-font);
-  font-size: 15px;
-  color: var(--link);
-  text-decoration: none;
-  font-weight: 400;
-}
-nav[aria-label="Primary"] a:hover { text-decoration: underline; }
-nav .separator {
-  margin: 0 6px;
-  color: var(--text-light);
-}
-nav[aria-label="Primary"] a.active {
-  color: var(--text);
-  font-weight: 600;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--accent);
-}
-nav[aria-label="Primary"] a[aria-current="page"] { cursor: default; }
-nav[aria-label="Primary"] a[aria-current="page"]:hover { text-decoration: none; }
-
 /* Labels */
 .labels {
   font-family: var(--mono-font);
@@ -251,22 +226,6 @@ footer a { color: var(--link); }
   text-decoration: none;
   margin-bottom: 32px;
   letter-spacing: -0.01em;
-}
-.cs-brand + nav { display: block; }
-
-.cs-title {
-  font-family: var(--heading-font);
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.cs-intro {
-  font-size: 15px;
-  color: var(--text-light);
-  margin-bottom: 36px;
-  line-height: 1.6;
 }
 
 .cs-grid {

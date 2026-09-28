@@ -1,3 +1,0 @@
-<nav aria-label="Primary">
-  <a href="{{ '/' | relative_url }}"{% if include.active == "home" %} class="active" aria-current="page"{% endif %}>home</a><span class="separator" aria-hidden="true">&middot;</span><a href="{{ '/case-studies/' | relative_url }}"{% if include.active == "case-studies" %} class="active" aria-current="page"{% elsif include.active == "case-study" %} class="active"{% endif %}>case studies</a>
-</nav>

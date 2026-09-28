@@ -1,20 +1,19 @@
 ---
-title: Case studies
-description: >-
-  AI and machine learning case studies by Scott Campit: real estate analytics, custom LLMs,
-  computer vision, social engineering voicebots, sports AI, bioinformatics, and logistics optimization.
+layout: null
 permalink: /case-studies/
-twitter:
-  card: summary
+sitemap: false
 ---
-<div class="cs-page-wrapper">
-  <a class="cs-brand" href="{{ '/' | relative_url }}">Scott Campit</a>
-  {% include nav.html active="case-studies" %}
-  <h1 class="cs-title">Case studies</h1>
-  <p class="cs-intro">Selected projects across AI, biomedical research, and product engineering, from my time as a researcher and as founder of Torchstack.</p>
-  <div class="cs-grid">
-    {% assign studies = site.case_studies | sort: "order" %}
-    {% for cs in studies %}{% include card.html cs=cs heading="h2" loading="eager" %}{% endfor %}
-  </div>
-  {% include cta.html boxed=true heading="Want to dig into one of these?" text="I&rsquo;m happy to talk through the approach, what worked, and what I&rsquo;d do differently." %}
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Selected work &middot; {{ site.title }}</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ '/' | absolute_url }}">
+<meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}#work">
+<script>location.replace("{{ '/' | relative_url }}#work");</script>
+</head>
+<body>
+<p><a href="{{ '/' | relative_url }}#work">Selected work has moved to the home page.</a></p>
+</body>
+</html>

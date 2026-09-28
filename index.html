@@ -3,14 +3,15 @@ twitter:
   card: summary
 ---
 <script>
-  // Old single-page URLs used #case-studies; send them to the real page.
-  if (location.hash === "#case-studies") location.replace("{{ '/case-studies/' | relative_url }}");
+  // Old URLs used #case-studies; the work now lives in #work on this page.
+  if (location.hash === "#case-studies") location.replace("#work");
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Scott Campit",
+  "name": "Scott E. Campit",
+  "honorificSuffix": "PhD",
   "url": "https://scottcampit.com",
   "image": "https://scottcampit.com/images/profile.jpg",
   "jobTitle": "Research Scientist",
@@ -19,7 +20,7 @@ twitter:
     "name": "Toby",
     "url": "https://www.toby.health/"
   },
-  "description": "Builds AI that turns biological and clinical data into clear decisions that improve health outcomes.",
+  "description": "Computational biologist and Research Scientist at Toby, building AI-based non-invasive diagnostics for early detection of cancer, Alzheimer's, and other diseases.",
   "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Data Science", "Computer Vision", "Natural Language Processing", "Bioinformatics", "Computational Biology", "Diagnostics", "Clinical Data", "Predictive Analytics"],
   "alumniOf": {
     "@type": "CollegeOrUniversity",
@@ -41,7 +42,6 @@ twitter:
 
 <div class="home-layout">
   <div class="home-left">
-    {% include nav.html active="home" %}
     <p class="labels">Founder &middot; Scientist &middot; AI Engineer &middot; Bay Area &rarr; Austin</p>
     <div class="hero-header">
       <img src="{{ '/images/profile.webp' | relative_url }}" alt="Portrait of Scott Campit" class="profile-photo" width="88" height="88">
@@ -49,7 +49,7 @@ twitter:
     </div>
     <div class="bio">
       <p>I&rsquo;m a Computational Biologist and Research Scientist at <a href="https://www.toby.health/">Toby</a>, building AI-based, non-invasive diagnostic technologies that support early detection of cancer, Alzheimer&rsquo;s, and other diseases.</p>
-      <p>I earned my PhD at the University of Michigan, where I simulated biological processes and built AI models of cancer metabolism from multi-omics data to identify new biomarkers and support drug discovery. My work has been published in peer-reviewed journals, including Nature Communications, Cancer &amp; Metabolism, and Clinical &amp; Experimental Metastasis. My academic research was funded by the NIH/NCI, the DOE, and private institutions.</p>
+      <p>I earned my PhD at the University of Michigan, where I simulated biological processes and built AI models of cancer metabolism from multi-omics data to identify new biomarkers and support drug discovery. My work has been published in peer-reviewed journals, including Communications Biology, Cancer &amp; Metabolism, and Clinical &amp; Experimental Metastasis. My academic research was funded by the NIH/NCI, the DOE, and private institutions.</p>
       <p>Throughout my career, I&rsquo;ve applied AI to real-world data and high-impact problems. I&rsquo;ve built clinical AI/NLP models for Medicare reimbursement, led a technical team as Head of Technology building AI products in the life sciences, and, as a founder, helped companies with AI transformation, enablement, and implementation.</p>
       <p>I&rsquo;m an SF Bay Area transplant now living in Austin, TX. Feel free to <a href="mailto:{{ site.email }}">reach out for coffee</a> &mdash; I love talking about all things science, diagnostics, technology, and AI.</p>
     </div>

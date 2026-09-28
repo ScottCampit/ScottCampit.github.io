@@ -8,7 +8,6 @@ layout: default
 
 <div class="cs-page-wrapper cs-detail">
   <a class="cs-brand" href="{{ '/' | relative_url }}">Scott Campit</a>
-  {% include nav.html active="case-study" %}
 
   <article class="cs-article">
     <header class="cs-hero">
@@ -61,6 +60,6 @@ layout: default
 
   <nav class="cs-pager" aria-label="More case studies">
     {% if prev %}<a class="cs-pager-prev" href="{{ prev.url | relative_url }}" rel="prev"><span>Previous</span>{{ prev.title | escape }}</a>{% else %}<span></span>{% endif %}
-    {% if next %}<a class="cs-pager-next" href="{{ next.url | relative_url }}" rel="next"><span>Next</span>{{ next.title | escape }}</a>{% else %}<a class="cs-pager-next" href="{{ '/case-studies/' | relative_url }}"><span>Back to</span>All case studies</a>{% endif %}
+    {% if next %}<a class="cs-pager-next" href="{{ next.url | relative_url }}" rel="next"><span>Next</span>{{ next.title | escape }}</a>{% else %}<a class="cs-pager-next" href="{{ '/' | relative_url }}#work"><span>Back to</span>Selected work</a>{% endif %}
   </nav>
 </div>
