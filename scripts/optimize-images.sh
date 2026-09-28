@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # One-off: build web-sized images from full-resolution originals.
-#   SRC  full-res originals (kept outside the repo)
+#   SRC  full-res originals (kept outside the repo; defaults to ../site-drafts next to the repo)
 #   DEST images/ in this repo
 # Gallery images -> WebP, fit within 1600x1600.
 # Card/og thumbnails -> JPG, 800px wide (JPG so link-preview fetchers can read them).
 set -euo pipefail
 
-SRC="${1:-../site-drafts/images-original}"
-DEST="$(cd "$(dirname "$0")/.." && pwd)/images"
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+SRC="${1:-$REPO/../site-drafts/images-original}"
+DEST="$REPO/images"
 
 THUMBS=(
   real-estate-data-science/dashboard_combined.png
