@@ -275,6 +275,26 @@ footer a {
   color: var(--accent-text);
   margin-bottom: 8px;
 }
+.record .first-author {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--accent-text);
+  font-family: var(--mono-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  vertical-align: 1px;
+}
+.record-authors strong {
+  color: var(--text);
+  font-weight: 700;
+}
 .record h2 {
   font-family: var(--heading-font);
   font-size: 17px;
