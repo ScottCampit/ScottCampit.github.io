@@ -247,14 +247,6 @@ main { flex: 1; width: 100%; }
 }
 
 
-/* Selected work */
-.work {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 40px 24px;
-}
-.work .cta-heading { margin-bottom: 28px; }
-
 /* Footer */
 footer {
   text-align: center;
@@ -264,15 +256,7 @@ footer {
 }
 footer a { color: var(--link); }
 
-/* ============ CASE STUDIES INDEX ============ */
-
-.cs-page-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 40px 48px;
-  width: 100%;
-}
-
+/* Home link on the book page */
 .cs-brand {
   display: inline-block;
   font-family: var(--heading-font);
@@ -283,240 +267,6 @@ footer a { color: var(--link); }
   margin-bottom: 32px;
   letter-spacing: -0.01em;
 }
-
-.cs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.cs-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-}
-.cs-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(67,82,114,0.12);
-}
-.cs-card:focus-visible { border-radius: 16px; }
-
-.cs-card-image {
-  height: 140px;
-  border-radius: 12px;
-  margin: 10px 10px 0;
-  overflow: hidden;
-}
-.cs-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cs-card-body {
-  padding: 16px 18px 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.cs-card-category {
-  display: inline-block;
-  font-family: var(--mono-font);
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: #E7F2F1;
-  color: var(--text);
-  margin-bottom: 10px;
-  align-self: flex-start;
-}
-
-.cs-card h2, .cs-card h3 {
-  font-family: var(--heading-font);
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--text);
-  line-height: 1.25;
-}
-.cs-card .summary {
-  font-size: 13px;
-  color: var(--text-light);
-  line-height: 1.55;
-}
-
-/* ============ CASE STUDY PAGE ============ */
-
-.cs-detail { max-width: 840px; }
-
-.cs-article {
-  background: var(--panel);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(67,82,114,0.18);
-}
-.cs-hero {
-  background: linear-gradient(135deg, #435272 0%, #2d3a52 100%);
-  padding: 44px 44px 40px;
-}
-.cat-badge {
-  display: inline-block;
-  font-family: var(--mono-font);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #435272;
-  background: #E7F2F1;
-  border-radius: 6px;
-  padding: 4px 10px;
-  margin-bottom: 16px;
-}
-.cs-hero h1 {
-  font-family: var(--heading-font);
-  font-size: 32px;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 10px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-.cs-hero .subtitle {
-  font-size: 16px;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.6;
-}
-.cs-article-body {
-  padding: 40px 44px 48px;
-}
-
-.cs-section { margin-bottom: 32px; }
-.cs-section:last-child { margin-bottom: 0; }
-.cs-section-label {
-  font-family: var(--mono-font);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-  margin-bottom: 12px;
-}
-.cs-section p {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--text-light);
-}
-.cs-divider {
-  height: 1px;
-  background: #E2E8EF;
-  margin: 0 0 32px;
-}
-
-.deliverables { list-style: none; }
-.deliverables li {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 12px;
-  align-items: flex-start;
-  background: #FFFFFF;
-  border: 1px solid #E2E8EF;
-  border-radius: 10px;
-  padding: 14px 16px;
-}
-.deliverable-num {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(219,135,73,0.12);
-  color: var(--accent-text);
-  font-size: 11px;
-  font-weight: 700;
-  font-family: var(--mono-font);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cs-section .deliverables p {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text);
-}
-
-.tech-tags { list-style: none; }
-.tech-tags li {
-  font-family: var(--mono-font);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text);
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 12px;
-  display: inline-block;
-  margin: 0 8px 8px 0;
-}
-
-.cs-figure {
-  background: #FFFFFF;
-  border: 1px solid #E2E8EF;
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 20px;
-}
-.cs-figure img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 640px;
-  width: auto;
-  height: auto;
-}
-.cs-figure figcaption {
-  font-size: 13px;
-  color: var(--text-light);
-  text-align: center;
-  margin-top: 10px;
-  font-style: italic;
-}
-
-.cs-pager {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 32px;
-}
-.cs-pager a {
-  display: flex;
-  flex-direction: column;
-  color: var(--link);
-  font-family: var(--heading-font);
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  max-width: 48%;
-}
-.cs-pager a:hover { text-decoration: underline; }
-.cs-pager a span {
-  font-family: var(--mono-font);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-.cs-pager-next { text-align: right; margin-left: auto; }
 
 /* ============ INNER PAGES ============ */
 
@@ -565,32 +315,16 @@ footer a { color: var(--link); }
   overflow-wrap: anywhere;
 }
 
-/* ============ MOTION ============ */
-
-@media (prefers-reduced-motion: reduce) {
-  .cs-card, .cs-card:hover { transition: none; transform: none; }
-}
-
 /* ============ RESPONSIVE ============ */
 
 @media (max-width: 900px) {
   .home-layout { flex-direction: column; padding: 32px 24px 0; }
   .home-left { max-width: 100%; }
-  .work { padding: 40px 24px 16px; }
-  .cs-grid { grid-template-columns: repeat(2, 1fr); }
-  .cs-page-wrapper { padding: 32px 24px; }
   .site-header { padding: 16px 24px 0; }
   .page { padding: 24px 24px 40px; }
 }
 @media (max-width: 560px) {
-  .cs-grid { grid-template-columns: 1fr; }
   .hero-header h1 { font-size: 32px; }
   .profile-photo { width: 68px; height: 68px; }
-  .cs-page-wrapper { padding: 24px 16px; }
-  .cs-hero { padding: 28px 24px; }
-  .cs-hero h1 { font-size: 26px; }
-  .cs-article-body { padding: 28px 20px 36px; }
   .cta-boxed { padding: 24px 20px; }
-  .cs-pager { flex-direction: column; }
-  .cs-pager a { max-width: 100%; }
 }
