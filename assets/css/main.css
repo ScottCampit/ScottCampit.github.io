@@ -205,14 +205,19 @@ main { flex: 1; width: 100%; }
   margin-bottom: 40px;
 }
 .social-icon {
-  width: 50px;
-  height: 50px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
   border-radius: 12px;
   border: 1.5px solid var(--icon-border);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   color: var(--text-light);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
   text-decoration: none;
   transition: all 0.2s;
 }
@@ -223,6 +228,7 @@ main { flex: 1; width: 100%; }
 .social-icon svg {
   width: 22px;
   height: 22px;
+  flex-shrink: 0;
 }
 
 
