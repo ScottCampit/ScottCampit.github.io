@@ -37,6 +37,12 @@ defaults:
       date: "2026-04-10"
       seo:
         type: Article
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      permalink: /writing/:year/:month/:day/:title/
 
 theme: null
 

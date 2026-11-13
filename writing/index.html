@@ -1,0 +1,29 @@
+---
+layout: default
+title: Writing
+description: Writing by Scott E. Campit, PhD.
+permalink: /writing/
+---
+<div class="page">
+  <div class="home-left">
+    <div class="hero-header">
+      <h1>Writing</h1>
+    </div>
+    {% comment %}
+      Posts belong in _posts as YYYY-MM-DD-title.md and are listed here.
+      An empty _posts directory renders the sentence below. Do not add placeholder posts.
+    {% endcomment %}
+    {% if site.posts.size == 0 %}
+    <p class="cta-text">Writing will be collected here.</p>
+    {% else %}
+    <ul class="record-list">
+      {% for post in site.posts %}
+      <li class="record">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time></p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
