@@ -6,5 +6,52 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}');
+
+  document.addEventListener('click', function (event) {
+    var node = event.target;
+    var link = node && node.closest ? node.closest('a') : null;
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var place = link.getAttribute('data-link-location');
+    if (!place) {
+      if (link.closest('footer')) place = 'footer';
+      else if (link.closest('.cta')) place = 'cta';
+      else place = 'body';
+    }
+
+    var path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+    var page = 'page';
+    var study = path.match(/\/case-studies\/([^/]+)$/);
+    if (path === '/') page = 'home';
+    else if (path === '/book') page = 'book';
+    else if (study) page = study[1];
+
+    var linkLocation = page + ':' + place;
+
+    if (href.indexOf('mailto:') === 0) {
+      gtag('event', 'email_click', {
+        link_location: linkLocation,
+        link_url: 'mailto',
+        transport_type: 'beacon'
+      });
+      return;
+    }
+
+    var linkPath = '';
+    try {
+      linkPath = new URL(link.href, window.location.href).pathname.replace(/\/+$/, '') || '/';
+    } catch (err) {
+      linkPath = '';
+    }
+
+    if (href.indexOf('calendar.app.google') !== -1 || linkPath === '/book') {
+      gtag('event', 'book_call_click', {
+        link_location: linkLocation,
+        link_url: link.href,
+        transport_type: 'beacon'
+      });
+    }
+  });
 </script>
 {% endif %}
