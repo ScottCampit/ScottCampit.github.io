@@ -1,8 +1,10 @@
 <section class="cta{% if include.boxed %} cta-boxed{% endif %}">
+  {% unless include.hide_heading %}
   <h2 class="cta-heading">{{ include.heading | default: "Let&rsquo;s talk" }}</h2>
+  {% endunless %}
   {% if include.text %}<p class="cta-text">{{ include.text }}</p>{% endif %}
   <div class="cta-actions">
-    <a class="btn-primary" href="mailto:{{ site.email }}">{{ include.button | default: "Email me" }}</a>
-    <span class="cta-email">{{ site.email }}</span>
+    <a class="btn-primary" href="{{ include.primary_href | default: "https://calendar.app.google/9tfZvkxyzZLi2U9D7" }}">{{ include.button | default: "Book a call" }}</a>
+    <a class="cta-email" href="mailto:{{ site.email }}">{{ include.secondary | default: site.email }}</a>
   </div>
 </section>
