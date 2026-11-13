@@ -1,0 +1,143 @@
+# Publications verified on 2026-11-13.
+# Source: Crossref works API (api.crossref.org), query.author=Campit,
+# plus ORCID 0000-0003-3454-8042 works where a DOI was also on Crossref.
+# Included only when a listed author is Scott Campit, Scott E. Campit, or Scott Edward Campit.
+# Other people named Campit were not included.
+# Preprints (Crossref type posted-content) were not included.
+# Titles are Crossref titles with HTML tags removed and entities decoded.
+# Author names are Given + Family as Crossref lists them, in listed order.
+# Scott asked to omit the 2023 correction notice 10.1007/s10585-023-10215-9.
+# The 2022 article 10.1007/s10585-022-10185-4 stays.
+# GOT1 article 10.1186/s40170-019-0202-2: confirmed by Scott, PMID 31908776.
+- title: "Artificial Intelligence‐Based Urine Volatomic Assay for Multi‐Cancer Detection: A Multicentric Case–Control Discovery and Internal Validation Study"
+  authors:
+    - "Scott Campit"
+    - "Sudharshanan Balaji"
+    - "Matthew Laskowski"
+    - "Thomas J. Polascik"
+  journal: "Cancer Reports"
+  year: 2026
+  date: "2026-11"
+  doi: "10.1002/cnr2.70735"
+  url: "https://doi.org/10.1002/cnr2.70735"
+  type: "journal-article"
+- title: "Genome-scale modeling identifies dynamic metabolic vulnerabilities during the epithelial to mesenchymal transition"
+  authors:
+    - "Rupa Bhowmick"
+    - "Scott Campit"
+    - "Shiva Krishna Katkam"
+    - "Venkateshwar G. Keshamouni"
+    - "Sriram Chandrasekaran"
+  journal: "Communications Biology"
+  year: 2024
+  date: "2024-12-27"
+  doi: "10.1038/s42003-024-07408-7"
+  url: "https://doi.org/10.1038/s42003-024-07408-7"
+  type: "journal-article"
+- title: "Single-cell RNA-sequencing identifies anti-cancer immune phenotypes in the early lung metastatic niche during breast cancer"
+  authors:
+    - "Sophia M. Orbach"
+    - "Michael D. Brooks"
+    - "Yining Zhang"
+    - "Scott E. Campit"
+    - "Grace G. Bushnell"
+    - "Joseph T. Decker"
+    - "Ryan J. Rebernick"
+    - "Sriram Chandrasekaran"
+    - "Max S. Wicha"
+    - "Jacqueline S. Jeruss"
+    - "Lonnie D. Shea"
+  journal: "Clinical & Experimental Metastasis"
+  year: 2022
+  date: "2022-08-24"
+  doi: "10.1007/s10585-022-10185-4"
+  url: "https://doi.org/10.1007/s10585-022-10185-4"
+  type: "journal-article"
+- title: "Nutrient Sensing by Histone Marks: Reading the Metabolic Histone Code Using Tracing, Omics, and Modeling"
+  authors:
+    - "Scott E. Campit"
+    - "Alia Meliki"
+    - "Neil A. Youngson"
+    - "Sriram Chandrasekaran"
+  journal: "BioEssays"
+  year: 2020
+  date: "2020-07-08"
+  doi: "10.1002/bies.202000083"
+  url: "https://doi.org/10.1002/bies.202000083"
+  type: "journal-article"
+- title: "Common biochemical properties of metabolic genes recurrently dysregulated in tumors"
+  authors:
+    - "Krishnadev Oruganty"
+    - "Scott Edward Campit"
+    - "Sainath Mamde"
+    - "Costas A. Lyssiotis"
+    - "Sriram Chandrasekaran"
+  journal: "Cancer & Metabolism"
+  year: 2020
+  date: "2020-05-08"
+  doi: "10.1186/s40170-020-0211-1"
+  url: "https://doi.org/10.1186/s40170-020-0211-1"
+  type: "journal-article"
+- title: "Tissue of origin dictates GOT1 dependence and confers synthetic lethality to radiotherapy"
+  authors:
+    - "Barbara S. Nelson"
+    - "Lin Lin"
+    - "Daniel M. Kremer"
+    - "Cristovão M. Sousa"
+    - "Cecilia Cotta-Ramusino"
+    - "Amy Myers"
+    - "Johanna Ramos"
+    - "Tina Gao"
+    - "Ilya Kovalenko"
+    - "Kari Wilder-Romans"
+    - "Joseph Dresser"
+    - "Mary Davis"
+    - "Ho-Joon Lee"
+    - "Zeribe C. Nwosu"
+    - "Scott Campit"
+    - "Oksana Mashadova"
+    - "Brandon N. Nicolay"
+    - "Zachary P. Tolstyka"
+    - "Christopher J. Halbrook"
+    - "Sriram Chandrasekaran"
+    - "John M. Asara"
+    - "Howard C. Crawford"
+    - "Lewis C. Cantley"
+    - "Alec C. Kimmelman"
+    - "Daniel R. Wahl"
+    - "Costas A. Lyssiotis"
+  journal: "Cancer & Metabolism"
+  year: 2020
+  date: "2020-01-02"
+  doi: "10.1186/s40170-019-0202-2"
+  url: "https://doi.org/10.1186/s40170-019-0202-2"
+  type: "journal-article"
+- title: "Inferring Metabolic Flux from Time-Course Metabolomics"
+  authors:
+    - "Scott Campit"
+    - "Sriram Chandrasekaran"
+  journal: "Methods in Molecular Biology"
+  year: 2020
+  date: "2020"
+  doi: "10.1007/978-1-0716-0159-4_13"
+  url: "https://doi.org/10.1007/978-1-0716-0159-4_13"
+  type: "book-chapter"
+- title: "Naphthablins B and C, Meroterpenoids Identified from the Marine Sediment-Derived Streptomyces sp. CP26-58 Using HeLa Cell-Based Cytological Profiling"
+  authors:
+    - "Hana Martucci"
+    - "Scott E. Campit"
+    - "Stephanie R. Gee"
+    - "Walter M. Bray"
+    - "Trevor Gokey"
+    - "A. King Cada"
+    - "Ten-Yang Yen"
+    - "Katsuhiko Minoura"
+    - "Anton B. Guliaev"
+    - "R. Scott Lokey"
+    - "Taro Amagata"
+  journal: "Journal of Natural Products"
+  year: 2017
+  date: "2017-01-27"
+  doi: "10.1021/acs.jnatprod.6b00996"
+  url: "https://doi.org/10.1021/acs.jnatprod.6b00996"
+  type: "journal-article"

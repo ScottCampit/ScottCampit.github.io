@@ -1,0 +1,44 @@
+---
+layout: default
+title: Publications
+description: Publications by Scott E. Campit, PhD.
+permalink: /publications/
+---
+{% assign articles = site.data.publications | where: "type", "journal-article" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for pub in articles %}
+    {
+      "@type": "ScholarlyArticle",
+      "headline": {{ pub.title | jsonify }},
+      "datePublished": {{ pub.date | jsonify }},
+      "url": {{ pub.url | jsonify }},
+      "author": [
+        {% for name in pub.authors %}
+        {"@type": "Person", "name": {{ name | jsonify }}}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": {{ pub.journal | jsonify }}}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+<div class="page">
+  <div class="hero-header">
+    <h1>Publications</h1>
+  </div>
+  <ul class="record-list">
+    {% assign pubs = site.data.publications | sort: "date" | reverse %}
+    {% for pub in pubs %}
+    <li class="record">
+      <p class="venue">{{ pub.journal | escape }} · {{ pub.year }}{% if pub.type == "book-chapter" %} · Book chapter{% endif %}</p>
+      <h2>{{ pub.title | escape }}</h2>
+      <p>{{ pub.authors | join: ", " | escape }}</p>
+      <p><a href="{{ pub.url }}">{{ pub.url }}</a></p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
