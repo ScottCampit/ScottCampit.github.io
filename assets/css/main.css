@@ -136,6 +136,7 @@ main { flex: 1; width: 100%; }
   color: var(--accent-text);
   margin-bottom: 20px;
 }
+.labels span { white-space: nowrap; }
 
 /* Hero */
 .hero-header {
@@ -208,8 +209,17 @@ main { flex: 1; width: 100%; }
 }
 .btn-primary:hover { background: #2d3a52; }
 .cta-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 2px;
   font-size: 15px;
   color: var(--link);
+}
+.cta-text a { color: var(--link); }
+.cta-text + .cta-text {
+  color: var(--text-light);
+  margin-top: 8px;
 }
 .cta-boxed {
   background: var(--card-bg);
@@ -251,21 +261,15 @@ main { flex: 1; width: 100%; }
 footer {
   text-align: center;
   padding: 32px 24px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-light);
 }
-footer a { color: var(--link); }
-
-/* Home link on the book page */
-.cs-brand {
+footer a {
   display: inline-block;
-  font-family: var(--heading-font);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
-  margin-bottom: 32px;
-  letter-spacing: -0.01em;
+  min-height: 44px;
+  padding: 12px 4px;
+  color: var(--link);
+  vertical-align: middle;
 }
 
 /* ============ INNER PAGES ============ */
@@ -281,6 +285,7 @@ footer a { color: var(--link); }
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 560px;
 }
 .record {
   background: var(--card-bg);
@@ -311,20 +316,46 @@ footer a { color: var(--link); }
 }
 .record p + p { margin-top: 8px; }
 .record a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 10px 0;
   color: var(--link);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 /* ============ RESPONSIVE ============ */
 
 @media (max-width: 900px) {
   .home-layout { flex-direction: column; padding: 32px 24px 0; }
-  .home-left { max-width: 100%; }
   .site-header { padding: 16px 24px 0; }
   .page { padding: 24px 24px 40px; }
 }
+@media (max-width: 700px) {
+  .site-nav ul { gap: 4px 6px; }
+  .site-nav li:last-child { flex: 1 0 100%; }
+  .site-nav a {
+    padding: 8px 4px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .site-nav a.btn-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .bio,
+  .cta-text,
+  .record p,
+  .record a { font-size: 16px; }
+}
 @media (max-width: 560px) {
+  .home-layout .hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .hero-header h1 { font-size: 32px; }
   .profile-photo { width: 68px; height: 68px; }
   .cta-boxed { padding: 24px 20px; }
+  .home-layout .hero-header:not(:has(.profile-photo)) { margin-bottom: 12px; }
+  .home-layout .hero-header:not(:has(.profile-photo)) + .bio { margin-bottom: 12px; }
 }

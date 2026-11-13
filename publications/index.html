@@ -37,7 +37,7 @@ permalink: /publications/
       <p class="venue">{{ pub.journal | escape }} · {{ pub.year }}{% if pub.type == "book-chapter" %} · Book chapter{% endif %}</p>
       <h2>{{ pub.title | escape }}</h2>
       <p>{{ pub.authors | join: ", " | escape }}</p>
-      <p><a href="{{ pub.url }}">{{ pub.url }}</a></p>
+      <p><a href="{{ pub.url }}">DOI</a></p>
     </li>
     {% endfor %}
   </ul>
