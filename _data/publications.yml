@@ -6,6 +6,9 @@
 # Preprints (Crossref type posted-content) were not included.
 # Titles are Crossref titles with HTML tags removed and entities decoded.
 # Author names are Given + Family as Crossref lists them, in listed order.
+# Scott asked to omit the 2023 correction notice 10.1007/s10585-023-10215-9.
+# The 2022 article 10.1007/s10585-022-10185-4 stays.
+# GOT1 article 10.1186/s40170-019-0202-2: confirmed by Scott, PMID 31908776.
 - title: "Artificial Intelligence‐Based Urine Volatomic Assay for Multi‐Cancer Detection: A Multicentric Case–Control Discovery and Internal Validation Study"
   authors:
     - "Scott Campit"
@@ -30,25 +33,6 @@
   date: "2024-12-27"
   doi: "10.1038/s42003-024-07408-7"
   url: "https://doi.org/10.1038/s42003-024-07408-7"
-  type: "journal-article"
-- title: "Correction: Single-cell RNA-sequencing identifies anti-cancer immune phenotypes in the early lung metastatic niche during breast cancer"
-  authors:
-    - "Sophia M. Orbach"
-    - "Michael D. Brooks"
-    - "Yining Zhang"
-    - "Scott E. Campit"
-    - "Grace G. Bushnell"
-    - "Joseph T. Decker"
-    - "Ryan J. Rebernick"
-    - "Sriram Chandrasekaran"
-    - "Max S. Wicha"
-    - "Jacqueline S. Jeruss"
-    - "Lonnie D. Shea"
-  journal: "Clinical & Experimental Metastasis"
-  year: 2023
-  date: "2023-06-13"
-  doi: "10.1007/s10585-023-10215-9"
-  url: "https://doi.org/10.1007/s10585-023-10215-9"
   type: "journal-article"
 - title: "Single-cell RNA-sequencing identifies anti-cancer immune phenotypes in the early lung metastatic niche during breast cancer"
   authors:
