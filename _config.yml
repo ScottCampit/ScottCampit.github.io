@@ -26,7 +26,11 @@ defaults:
       path: ""
     values:
       layout: default
-      image: /images/profile.jpg
+      image:
+        path: /images/og-card.png
+        height: 630
+        width: 1200
+        alt: Scott E. Campit, PhD. Computational Biologist at TOBY.
   - scope:
       path: ""
       type: posts
