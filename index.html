@@ -2,10 +2,6 @@
 twitter:
   card: summary
 ---
-<script>
-  // Old URLs used #case-studies; the work now lives in #work on this page.
-  if (location.hash === "#case-studies") location.replace("#work");
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,11 +60,3 @@ twitter:
     </div>
   </div>
 </div>
-
-<section class="work" id="work" aria-labelledby="work-heading">
-  <h2 class="cta-heading" id="work-heading">Selected work</h2>
-  <div class="cs-grid">
-    {% assign studies = site.case_studies | sort: "order" %}
-    {% for cs in studies %}{% include card.html cs=cs %}{% endfor %}
-  </div>
-</section>

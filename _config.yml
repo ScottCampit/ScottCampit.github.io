@@ -23,26 +23,12 @@ social:
     - https://github.com/ScottCampit
     - https://www.linkedin.com/in/scottcampit/
 
-collections:
-  case_studies:
-    output: true
-    permalink: /case-studies/:name/
-
 defaults:
   - scope:
       path: ""
     values:
       layout: default
       image: /images/profile.jpg
-  - scope:
-      path: ""
-      type: case_studies
-    values:
-      layout: case-study
-      # First published on the site; without this Jekyll stamps every build time.
-      date: "2026-04-10"
-      seo:
-        type: Article
   - scope:
       path: ""
       type: posts
