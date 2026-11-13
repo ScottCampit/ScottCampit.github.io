@@ -15,8 +15,8 @@
     var href = link.getAttribute('href') || '';
     var place = link.getAttribute('data-link-location');
     if (!place) {
-      if (link.closest('footer')) place = 'footer';
-      else if (link.closest('.cta')) place = 'cta';
+      if (link.closest('nav')) place = 'nav';
+      else if (link.closest('footer')) place = 'footer';
       else place = 'body';
     }
 
@@ -24,7 +24,6 @@
     var page = 'page';
     var study = path.match(/\/case-studies\/([^/]+)$/);
     if (path === '/') page = 'home';
-    else if (path === '/book') page = 'book';
     else if (study) page = study[1];
 
     var linkLocation = page + ':' + place;
@@ -38,14 +37,7 @@
       return;
     }
 
-    var linkPath = '';
-    try {
-      linkPath = new URL(link.href, window.location.href).pathname.replace(/\/+$/, '') || '/';
-    } catch (err) {
-      linkPath = '';
-    }
-
-    if (href.indexOf('calendar.app.google') !== -1 || linkPath === '/book') {
+    if (href.indexOf('calendar.app.google') !== -1) {
       gtag('event', 'book_call_click', {
         link_location: linkLocation,
         link_url: link.href,
