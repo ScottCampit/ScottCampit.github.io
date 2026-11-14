@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% seo %}
 <meta name="theme-color" content="#D6DAE2">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -12,6 +11,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Sora:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% comment %}
+  On the home page, jekyll-seo-tag appends " | " plus the site tagline
+  because the page title matches the site title. og:title and twitter:title
+  already use the page title alone. Skip the plugin title and set it exactly.
+{% endcomment %}
+{% if page.url == "/" %}
+<title>Scott E. Campit, PhD</title>
+{% seo title=false %}
+{% else %}
+{% seo %}
+{% endif %}
 {% include analytics.html %}
 </head>
 <body>

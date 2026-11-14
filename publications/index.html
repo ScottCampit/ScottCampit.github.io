@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publications
-description: Publications by Scott E. Campit, PhD.
+description: Peer-reviewed papers by Scott E. Campit, PhD, on AI diagnostics, cancer metabolism, and systems biology.
 permalink: /publications/
 ---
 {% assign articles = site.data.publications | where: "type", "journal-article" %}
@@ -34,9 +34,10 @@ permalink: /publications/
     {% assign pubs = site.data.publications | sort: "date" | reverse %}
     {% for pub in pubs %}
     <li class="record">
-      <p class="venue">{{ pub.journal | escape }} · {{ pub.year }}{% if pub.type == "book-chapter" %} · Book chapter{% endif %}</p>
+      {% assign lead_author = pub.authors | first %}
+      <p class="venue">{{ pub.journal | escape }} · {{ pub.year }}{% if pub.type == "book-chapter" %} · Book chapter{% endif %}{% if lead_author contains "Scott" and lead_author contains "Campit" %} <span class="first-author">First author</span>{% endif %}</p>
       <h2>{{ pub.title | escape }}</h2>
-      <p>{{ pub.authors | join: ", " | escape }}</p>
+      <p class="record-authors">{% for name in pub.authors %}{% if name contains "Scott" and name contains "Campit" %}<strong>{{ name | escape }}</strong>{% else %}{{ name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
       <p><a href="{{ pub.url }}">DOI</a></p>
     </li>
     {% endfor %}

@@ -21,11 +21,7 @@
     }
 
     var path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
-    var page = 'page';
-    var study = path.match(/\/case-studies\/([^/]+)$/);
-    if (path === '/') page = 'home';
-    else if (study) page = study[1];
-
+    var page = path === '/' ? 'home' : 'page';
     var linkLocation = page + ':' + place;
 
     if (href.indexOf('mailto:') === 0) {
