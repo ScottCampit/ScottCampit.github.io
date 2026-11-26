@@ -34,7 +34,10 @@
 {{ content }}
 </main>
 
-<footer>&copy; {{ site.time | date: "%Y" }} Scott Campit &middot; <a href="mailto:{{ site.email }}">{{ site.email }}</a></footer>
+<footer>
+{% include social.html %}
+<p>&copy; {{ site.time | date: "%Y" }} Scott Campit &middot; <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+</footer>
 
 </body>
 </html>
