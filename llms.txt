@@ -1,0 +1,21 @@
+# Scott E. Campit, PhD
+
+Personal site for Scott Campit, a computational biologist at TOBY. The site covers AI-based urine tests for early cancer detection, cancer metabolism, and systems biology.
+
+## Root URL
+
+https://scottcampit.com
+
+## Pages
+
+- [Home](https://scottcampit.com/): Bio, role at TOBY, and contact links
+- [About](https://scottcampit.com/about/): Current urine VOC cancer detection work and background
+- [Publications](https://scottcampit.com/publications/): Peer-reviewed papers
+- [Writing](https://scottcampit.com/writing/): Writing index
+
+## Optional
+
+- [Google Scholar](https://scholar.google.com/citations?user=dO-fWpwAAAAJ&hl=en): Citation profile
+- [GitHub](https://github.com/ScottCampit): Code and repositories
+- [LinkedIn](https://www.linkedin.com/in/scottcampit/): Professional profile
+- [TOBY](https://www.toby.health/): Employer building AI urine tests for early cancer detection
