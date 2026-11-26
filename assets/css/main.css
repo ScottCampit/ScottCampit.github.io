@@ -239,7 +239,11 @@ footer {
   font-size: 14px;
   color: var(--text-light);
 }
-footer a {
+footer .social-icons {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+footer > p a {
   display: inline-block;
   min-height: 44px;
   padding: 12px 4px;
